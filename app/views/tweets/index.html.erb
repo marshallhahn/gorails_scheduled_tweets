@@ -2,10 +2,10 @@
   <h1>Tweets</h1>
 
   <% if Current.user.twitter_accounts.any? %>
-    <%= button_to "Schedule a Tweet", new_tweet_path, class: "btn btn-primary"%>
+    <%= link_to "Schedule a Tweet", new_tweet_path, class: "btn btn-primary"%>
   <% end %>
 </div>
 
 <% if Current.user.twitter_accounts.none? %>
-  <%= button_to "Connect your Twitter Account", "/auth/twitter", class: "btn btn-primary"%>
+  <%= button_to "Connect your Twitter Account", "/auth/twitter", method: :post, class: "btn btn-primary"%>
 <% end %>
